@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tron Wallet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #121212;
+            color: #fff;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .wallet-info {
+            text-align: center;
+            font-size: 14px;
+            color: #ccc;
+            word-break: break-all;
+            margin-bottom: 20px;
+        }
+        .balance-card {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .balance-card h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #fff;
+        }
+        .transaction-list {
+            background: #2a2a2a;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .transaction {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #3a3a3a;
+            font-size: 14px;
+        }
+        .transaction span {
+            color: #ccc;
+        }
+        .actions {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .actions button {
+            padding: 10px 30px;
+            margin: 0 10px;
+            background: #00d4ff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .actions button:hover {
+            background: #00a3cc;
+        }
+        .message {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .success {
+            background: #28a745;
+            color: #fff;
+        }
+        .error {
+            background: #ff4d4d;
+            color: #fff;
+        }
+        .announcement {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .disclaimer {
+            text-align: center;
+            font-size: 12px;
+            color: #ff4d4d;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tron Wallet</h1>
+        <div class="wallet-info">
+            <p>Wallet Address: TPKQWWYmV1aipz2rBZEV1m1MvPEgD88okZ</p>
+            <p>Network: Tron Network</p>
+        </div>
+        <div class="balance-card">
+            <h2>510.41 USDT</h2>
+        </div>
+        <div class="transaction-list">
+            <div class="transaction">
+                <span>Received 510.41 USDT from TS7...aBcD</span>
+                <span>2025-05-08</span>
+            </div>
+        </div>
+        <div class="actions">
+            <button onclick="showTransfer()">Transfer</button>
+            <button onclick="showWithdraw()">Withdraw</button>
+        </div>
+        <div class="announcement">
+            <p><strong>Public Announcement (Copy for Post):</strong></p>
+            <p>A Tron wallet received 510.41 USDT on the Nile Testnet in a promotional demo. Tokens are transferable; withdrawals may require approval. Check Nile TronScan for details.</p>
+        </div>
+        <div class="disclaimer">
+            WARNING: This interface reflects a testnet transaction on the Nile Testnet. Tokens have no real value and are not on the mainnet Tron Network.
+        </div>
+    </div>
+    <div class="message success" id="transfer-message">
+        Transfer successful to another wallet.
+    </div>
+    <div class="message error" id="withdraw-message">
+        Transaction failed.
+    </div>
+
+    <script>
+        function showTransfer() {
+            const msg = document.getElementById('transfer-message');
+            msg.style.display = 'block';
+            setTimeout(() => { msg.style.display = 'none'; }, 3000);
+        }
+
+        function showWithdraw() {
+            const msg = document.getElementById('withdraw-message');
+            msg.style.display = 'block';
+            setTimeout(() => { msg.style.display = 'none'; }, 3000);
+        }
+    </script>
+</body>
+</html>
